@@ -181,4 +181,22 @@ SELECT * FROM orders WHERE name='Volodymyr Lut' ORDER BY date;
 
 -- Для замовника знайдіть замовлення з певним товаром
 -- I can't get it done:(
+-- Для замовника знайдіть замовлення за певний період і їх кількість
+
+SELECT * FROM orders WHERE name='Volodymyr Lut' AND date < '2018-02-01' AND date > '2017-02-10';
+
+-- Для кожного замовників визначте середню вартість замовлення
+
+SELECT AVG(total) FROM orders WHERE name='Volodymyr Lut';
+SELECT AVG(total) FROM orders WHERE name='Andryi Rodionov';
+
+-- Для кожного замовників визначте суму на яку були зроблені усі його замовлення
+
+SELECT SUM(total) FROM orders WHERE name='Volodymyr Lut';
+SELECT SUM(total) FROM orders WHERE name='Andryi Rodionov';
+
+-- Для кожного замовників визначте замовлення з максимальною вартістю
+
+SELECT MAX(total) FROM orders WHERE name='Volodymyr Lut';
+SELECT MAX(total) FROM orders WHERE name='Andryi Rodionov';
 
